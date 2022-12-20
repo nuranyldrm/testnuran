@@ -1,0 +1,1083 @@
+https://gist.github.com/tugrulyatagan/cca57a66cacd64488c68
+
+ls	listeleme yapar
+------
+ls --help	komut hakkında yardım
+ls -a		(all)herşeyi gizli dosyaları
+ls -l		(list)detaylı
+ls -la		birden fazla parametre verilebilir
+ls -d		dizinleri listeler
+[..]		karakter dizisi
+*		bütün karakterler
+?		tek karakter
+ls a*		a ile başlayan 
+ls ar*		ar ile başlayan
+ls h???n*	ilk harfi h 5.harfi n olan örn:hasan
+ls [ace]*	a, c veya e ile başlayan örn:armut, elma
+ls ?[rp]*	ikinci harfi r veya p olanlar örn:armut erik
+ls [a-c]*	baş harfi a-c olanlar örn: balık
+	
+man		komutun manual dosyasını açar
+type		komut hakkında kısa bilgi verir
+
+mkdir		boş dizin oluşturur
+/		dizin işareti
+	ali	ali dosyası
+	ali/	ali dizini
+\		(escape)kaçış karakteri özel karakterlerden önce kullanılır
+	birden\ fazla\ kelimeli \dizin	"birden falza kelimeli dizin" adında dizin
+aynı isimde dizin ve dosya olamaz
+	
+
+mv		taşı veya ad değiştirir
+-----
+mv ali veli	ali dosyasının adını veli yapar
+mv ali veli	eğer veli dizini varsa ali dizinini veliye taşır
+mv ali veli	eğer veli dizini yoksa ali dizinin adını veli yapar
+mv -i ali veli	eğer veli varsa üstüne yazmayı sorar (en garantisi bu komutu kullanmak)
+mv -v ali veli	ne olup bittiğini gösterir
+
+mv komutu kafa karıştırıcı gibi durabilir esasında mantık basit ikinci parametreniz
+halihazırda bulunuyorsa ve dizinse içine atar değilse ismini değiştirir
+"varsa içine atar yoksa adını değiştirir"
+
+cp     		kopyalar
+-----
+cp -u		aktarılacak dosya daha yeniyse aktarır
+cp 1 2 3 4	1,2,3 ü 4 e aktarır
+
+rmdir  	 	boş dizin siler
+
+rm
+-----
+rm ali		dosya siler
+rm ali veli	birden çok dosya siler
+rm -i ali	sorar sonra siler
+rm -f 		sormadan siler
+rm -r		dizinleri içindekilerle siler
+rm *.txt  	txt ile bitenleri siler
+BU KOMUTU VERMDEN ÖNCE ÇOK DİKKALTİ OLUN LINUX'TA GERİ AL DİYE BİRŞEY YOKTUR
+
+clear		ekranı temizler(kaydırır)
+
+history 	önceki komutları gösterir
+
+pwd		print working directory
+		bulubduğun dizini gösterir
+
+cd	
+-------
+cd dizin		(change directory) dizin değiştirir
+.  			bulunduğumuz dizin
+..			üst dizin
+~			ev dizinimiz
+cd ../../../		3 dizin üste
+cd -			bir önce geldiğin dizin
+
+date
+-------
+date	tarihi basar
+date --date="1 month ago"
+date --date="yesterday"
+date --date="2 years"
+
+cal
+------	
+cal		bulunduğunuz ayın takvimi
+cal -3		3lü takvim
+
+nano		basit editor
+
+cat		
+------
+cat dosya		dosyanın içeriğini basar
+cat -n  linuxders	satırları numaralandırır
+cat /proc/cpuinfo
+
+less
+-----
+less dosya		dosyanın içeriğini kaydırılabilir gösterir
+/	ile arama yapılır
+  n	next sonraki sonuç
+  p	previous önceki sonuç
+q	çık
+
+more	dandik bu kullanma
+-----
+more dosya	dosya içeriğini tek yönlü gösterir
+	enter ile ilerler geri gelmez(çok saçma bende anlamadım)
+
+tail
+----
+tail dosya	dosya içeriğinin sonunu gösterir(öntanımlı olarak son 10 satır)
+tail -f		dosya içeriğinin sonunu gerçek zamanlı gösterir (log okumak için kullanılır)
+tail -n 15	son 15 satır
+tail -n +20	baştan 20. satırdan itibaren dosya sonuna kadar
+
+head
+----
+head dosya	dosya içeriğinin başını gösterir(öntanımlı 10 satır)
+head -n 20	dosyanın ilk 20 satırı
+head -n -15	sondan 15. satırdan dosyanın başına kadar
+
+
+BASH kısayolları
+-------------------
+Ctrl + A	Satır başı
+Ctrl + E 	Satır sonu
+Ctrl + L	clear (ekranı kaydırarak temizler)
+Ctrl + U	kursorun solunu keser/siler
+Ctrl + K	kursorun sağını keser/siler
+Ctrl + Y	yapıştırır
+Alt + Y		önceki silinenleri yapıştırır (Ctrl+Y - Alt+y sırasıyla kullanılır)
+Ctrl + W	kursorden önceki kelimeyi siler
+Alt + D		kursorden sonraki kelimeyi siler
+Ctrl + R	geriye komut aratır
+Ctrl + C 	işlemi durdurur
+Ctrl + T 	son iki karakterin yerini degistirir
+Alt + T 	son iki kelimeyi degistirir
+Tab   		otomatik tamamlama(21. yüzyıl olmuş bunu kullanmayanlar var)
+!!		son komutu tekrarlar
+!ab		ab ile başlayan son komutu
+Alt + C		kelime içindeki o harfi büyütür(capital)(saçma bir cümle oldu ama deneyin anlayacaksınız sadece bir harfi büyütür)
+Alt + U		kelimeyi büyük harf yapar(upercase)
+Alt + L		kelimeyi kucuk harf yapar(lowercase)
+Alt + .		son komutun son kelimesi(çok manyak işe yarar)
+Ctrl + D 	bir kabuk üste çıkar(bunu bilmeyip terminal açıp kapayanlar var)
+Crtl + C	komutu sonlandır
+Ctrl + Z	komutu arkaya al(komutu sonlandırmaz! daha sonra detaylı anlatacam)
+Ctrl + Alt + F1	1. Konsola (TTY) ye geçer
+     Shift+Page Up/Down	   yukarı aşağı
+CTRL + Alt + F7 7. Konsol (muhtemelen) Grafik arayüze geçer
+Emacs kısayollarının hemen hemen aynısı
+
+
+| (pipe)    	kendinden önceki komutun çıktısını sonrakine girdi olarak aktarır. faydaları saymakla bitmez
+
+grep				dosya içi arama yapar
+------
+grep root /etc/passwd		"root" kelimesini arar
+grep "root" /etc/passwd		"" de kullanılabilir
+grep Root /etc/passwd		bu arama şekli büyük harfe duyarlıdır "root" kelimesini bulmaz
+grep -i Root /etc/passwd	büyük-küçük harf duyarsız "root" kelimesini bulur
+grep -v root /etc/passwd	aranan dışındaki satırlar
+grep -A 3 root /etc/passwd	(after)3 satır altı ile göster
+grep -B 3 root /etc/passwd	(before)3 satır üstü ile göster
+grep -A 3 -B 5 root /etc/passwd	5 satır altı 3 satır üstü ile göster
+grep -c root /etc/passwd  	bulunan satır sayısı
+grep -n root /etc/passwd  	satır sayılarını göster
+grep -cv root /etc/passwd	iki parametre bir arada
+grep -ri linux /home/		recursive dosya içeriği
+grep -ril linux /home/		kelimenin bulunduğu dosyaların adı
+grep s[ea]...m /proc/cpuinfo	başı s 2. harfi e yada a sonu m olan 6 harfli
+grep [.] /proc/cpuinfo		. olan satırlar 
+grep -w ali			sadece aliyi bulur
+
+daha detaylı bilgiler için lütfen "man grep". grep çok temel bir komuttur kullanmayanı dövüyorlar
+
+find 	  	dosya arar
+-----
+find -iname "MyCProgram.c"	büyük-küçük harf duyarsız
+find ~ -empty			
+find /etc -name "*mail*"	/etc içinde içinde mail geçen 
+find / -type f -size +100M	100MB dan büyük bütün dosyalar
+find / -type f -size -2M	2MB dan kucuk bütün dosyalar
+. bulunduğun dizin
+find . -mtime +60    		60 günden eski dosyalar
+find . –mtime -2		son 2 günün dosyaları
+
+
+reboot					    sistemi yeniden başlatmak için kullanılır.
+halt , init 0 , poweroff , shutdown –h now  bu komutlar sistemi kapatmak için kullanılır.
+shutdown 60	   	       	    60 dk. Sonra sistemi kapatır.
+
+“;” 	     iki komutu ard arda kullanmak için kullanılır. Komutlar arasına “;” konur.
+	     ls;who
+last	     sisteme giriş çıkış ne zaman yapılmış, ne zaman reboot yapılmış bunları gösterir.
+
+man hier
+man 7 hier
+/dev 	     system üzerinde bulunan aygıtların olduğu dizindir
+	 Sda – 1.disk , sdb – 2.disk , sdc – 3. disk
+/proc 	     sistem kaynakları hakkında bilgi verir. Sistem bilgilerini içeren dosyalar bulunur
+/etc	     sistem yapılandırma dosyaları
+/bin	     tüm kullanıcıların kullanabileceği komutlar bulunur. (cp,mv,mkdir..vb.)sistemin parçası olarak kabul edilen çalıştırılabilirler
+/sbin	     root kullanıcısının kullanabileceği yönetim ile ilgili komutların(çalıştırılabilirler) bulunduğu dizindir. genellikle root izni gerekir
+/lib	     system kütüphane dosyaları bu dizinde bulunur.
+/home	     kullanıcıların ev dizinleri bulunur
+/root	     root kullanıcısının ev dizini
+/mnt	     diğer disklerdeki bakım/onarım işleri için bağlantı noktası. eskilerden kalma bi olay
+/boot	     cekirdek (kernel) dosyaları ve önyükleyici(GRUB) bulunur. Sistem açılırken bunları yükler.
+/usr 	     dizini çeşitli programlar tarafından kullanılan bir dizindir(unix system resources) uygulamalar ve dökümanları, kaynak kodları
+	/usr/bin        çalıştırılabilir dosyalar                                                                                                     
+	/usr/lib        programların kitaplıkları
+/tmp 	     geçici dosyaların yaratıldığı dizin olarak kullanılır. Burdaki dosyalar oturum sonunda silinir
+/media	     medya aygıtları burada bulunur. (cdrom, floppy) bu olay da biraz esklierden kalmış
+/opt	     options isteğe bağlı olarak kullanılan dizindir.normal sistem dizinlerini kullananlar dışında kıllık yapan programlar kendi kütüphanesini yanında taşır ve buraya yüklenir.
+/sys 	     Proc gibi sistem bilgilerin düzenli olarak tutulduğu dizindir.
+/var	     ftpserver, webserver gibi paylaşılacak dosya ve dizinlerin burada tutulur. Web logları /var/log
+
+Bir dosya başında “.” Varsa onun gizli olduğunu ifade eder.
+
+which		komutun dizinini gösterir
+df		disc free (linuxun yüklü olduğu bölüm)
+df -h		for human
+df -m		df for mb
+touch   	dosya yaratır varolan dosyanın yaratılma tarihini değiştirir
+touch -a -m -t 203801181205.09 tgs.txt
+stat dosya       dosyanın durumu
+file dosya	 dosyanın türünü gösterir
+
+
+-------------------------------------------------
+uname			çekirdeiğn adı verir.
+uname –a      	      	İşletim sistemi hakkında tüm bilgiyi verir.
+whoami	   	    	Kimlik hakkında bilgi verir (ben kimim)
+
+who			 sistemdeki login olan kullanıcıları gösterir
+w   			 sistemdeki login olan kullanıcıların ne yaptığını gösterir
+id			 kullanıcı hakkında bilgi veirir grubu, id numarası
+id tugrul		 uid
+finger tugrul		 kullanıc hakkında bilgi verir(böle yazınca kötü durdu)
+uptime 			 açık kalma süresi
+
+echo			 çevresel değişkenleri basar
+a=5			 oturum için a yı 5 atar
+echo $a			 "5" basar
+echo "yazbunuguzellaf" > dosya		dosyaya "yazbunuguzellaf" yazar
+echo "yazbunuguzellaf" >> dosya		dosyanın sonuna	"yazbunuguzellaf" yazar
+
+
+echo $SHELL 		 Hangi kabuğun kullanıldığı bilgisini verir.
+     C Shell (csh)
+     Bourne Shell (bsh)
+     Bourne Again Shell (bash)		en çok kullanılan shell budur
+     Korne Shell (ksh)
+echo $PATH		kullanıcının pathini basar
+echo $HOME		
+echo $HOSTNAME
+env			kullanıcının çevresel değişkenlerinin tümünü basar
+
+adduser ali 		kullanıcı ekleme (dikkat "useradd" farklı bir komut kullanmayın)
+
+deluser			etc/passwd group shadow'u siler (bunu kullanmayın kullanıcının ev dizini kalır)
+userdel -r		kullanıcıyı tamamen siler
+usermod			kullanıcı hesabın düzenler ev dizini atama şifre atama path atama gibi
+	usermod -d /home/ieee ieee
+
+
+passwd		kullanıcı kendi parolasını değiştirir
+		root iken passwd istenen kullanıcının parolasını değiştirir
+passwd ali
+passwd -d kullanıcı	kullanıcıya parolasız giriş hakkı sağlar
+
+groupadd -g 507 yenigrup      	507 id li grup yaratır
+usermod -g yenigrup kullanici   root olarak kullanıcının hesabını düzenler
+	kullanici ile dosya oluştur
+groupmod	  grup hesabını düzenler
+
+/etc/passwd	kullanıcıların bilgileri buraya kaydedilir
+		user:password(x shadow da diyor):uid:gid::home:shell
+/etc/shadow	kullanıcıların şifreleri burada tutulur
+		user:encyriptedpass:dayfrom1970:maxexpireday
+		hash algoritması tek yönlüdür
+		parola algoritmadan geçer şifrelenir
+		parola girildiğinde algoritmanın sonucu karşılaştırılır
+/etc/group	kullanıcı ikinci bir gruba eklendiğinde buraya eklenir
+
+su		swith user veya superuser
+su - user	user kullanıcısına geçer
+     		- yazmak çok önemli istenilen kişinin path'ine(shell) ve pwd sine geçersin(home dizinine değil!)
+     		sadece su yazarsan yazdığın dizinde kalırsın
+		env ve pwd komutları ile gerekli karşılaştırmalar yapılabilir
+su		parametresiz root kullanıcısına geçer
+sudo		super user do (root gibi çalıştır)
+		root kullanıcısının izin verdiği şekilde sıradan kullanıcının root yetkileri ile komut vermesini sağlar
+		gerekli yetkilendirme ayarları /etc/sudoers içinde yapılır
+Burası çok önemli çok karıştırılır! 
+su     	   	root kullanıcısının parolası girilir 
+sudo		komutu veren kullanıcının parolası girilir
+		15 dakikalığına yönetici izni verir sonra tekrar parola ister
+
+Bu ne saçma iş sudo varsa su ne iş demeyin sudo verilen komutlarda yetki kısıtlaması olabilir. 
+günümüzde çoğu popüler dağıtımda(ubuntu,mint) öntanımlı olarak sudo root ile ilgili herşeyi yapabilir konumdadır 
+ama yapamayabilir de. root kullanıcısı bilgisayarın yöneticisidir herhangi bir kısıtlaması yoktur. verdiği komutlarda izne bakılmaz.
+LINUX işletim sistemleri yönetici kullanıcısının akıllı olduğunu varsayar ve ne yaptığını bilen biri olarak düşünülerek tasarlanmıştır. 
+ona "Yapayım mı bunu?, son kararın mı?, bak emin misin yapıyorum?" gibi sorular sormaz direk yapar. Bu yüzden bu iki komutu
+vermeden önce çok dikkatli olun, yapacağınız işleri mümkün olan en az izin ile yapın. sürekli root olmak çok sık yapılan bir yanlış ve
+çok aptalca bir davranıştır. Benim gördüğüm kadarıyla birisi bilgisayarının birşeylerini bozmuşsa
+(mesela işletim sistemini uçurmuş, kök dizini silmiş) mutlaka bu komutları(su veya sudo) vermiştir yani bu komutları vermedğiniz sürece
+bilgisayar kolay kolay bozamazsınız. kullanmadan önce dikkatli olun ve ne yaptığınızdan emin olun(komutların man sayfasına bakın)
+Debian dağıtımında(daha başkaları da var) ilk sudo komutu yazışınızda:
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+diye birşey çıkar çok doğrudur.
+
+
+q
+
+$ 		kullanıcı olduğunuzu gösterir.
+# 		root olduğunuzu gösterir.
+
+/etc/sudoers
+/etc/sudoers dosyasını herzaman visudo komutu ile düzenle başka editor kullanma
+Örnek sudoers konfigurasyonları:
+%wheel ALL=(ALL) ALL			satırı bu gruptaki herkesin herhangi komutu çalıştırmasını sağlar.
+%wheel ALL=(ALL) NOPASSWD: ALL		yukardaki işlemleri parolasız yapmaya imkan tanır.
+ALL ALL=(ALL) ALL			sistem üzerindeki tüm kullanıcılara root komutlarını çalıştırma yetkisi verir.
+     	       				populer dağıtımlarda öntanımlı gelen ayar budur(çok sık karıştırılan kavramların sebebi)
+username ALL=(ALL) ALL 			username adlı kullanıcıya root yetkisi verir.
+
+
+Dosya izinleri
+ls -la		ile dosya izinleri, sahibi ve grubu görülebilir
+
+r  w  x  |  r  w  x | r  w  x |
+-------------------------------
+User	   Group       Others
+
+User=Dosyanın sahibinin neler yapabileceği belirlenir
+Group=Dosyanın sahibi ile aynı gruptakilerin ne yapabileceği belirlenir
+Others=Dosya ile ilgisi olmayan kullanıcıların ne yapabileceği belirlenir(aynı ağdaki kullanıcılar)
+Root=Söylemeye bile gerek yok herşeyi yapar
+Burada karıştırılan olay şudur eğer benim sahip olduğum bir dosyanın izni örneğin 477 ise
+ben kendi dosyamı çalıştıramaz ve okuyamazken diğerleri herşeyi yapabilir bu dosya benim ben niye yapamıyorum
+diye şaşırmayın saçma birşey ama olur mu olur.
+
+
+r=read w=write x=execute
+
+2'nin kuvvetleri olarak toplayın
+
+rwx|r-x|r--|
+7   5   4
+
+en soldaki karakter dosyanın türümü belirtir
+   d directory
+   - normal dosya
+   l link
+
+chmod			dosya izinlerini ayarlar
+chmod 755 dosya		dosyaya istenen izni verir
+chmod g+rx dosya	gruba r ve x izni ekler
+chmod o-x dosya		others dan x iznini çıkarır
+chmod –R g+w /ali	ali dizini içindeki her dosyaya grup yazma izni verir
+
+chown user /home/user/saf	   dosya sahipliği atar saf dosyasının sahibi artık user kullanıcısı
+
+chgrp yenigrup /tmp/deneme	   dosyaların grubunu atar
+
+
+bir kullanıcının bir dizine yazma izni varsa o dizinin altındaki her 
+dosyayı ya da dizini silebiir eğer sticky bit etkin ise o dosyayı sadece
+sahibi silebilir
+sticky bit 1777 ve "s" olarak görünür
+
+suid 4755  	suid bit root gibi çalıştırma izni verir	
+      		ping komutu örnek ls -l /bin/ping (normal kullanici Internet Control Message Protocol erişim yetkisi yok)
+sgid 2755 dosya ile aynı grup izni
+
+
+Bir dosyaya dosya fonksiyonlarıyla yazma, ekleme gibi işlemlerin yapılabilmesi
+için yazma hakkının olabilmesi gerekir. POSIX sistemlerinde çalıştırılabilen dosyalar
+uzantılarıyla tespit edilmezler, erişim haklarıyla tespit edilirler. Yani dosyanın x erişim
+özelliği varsa bu dosya çalıştırılabilir bir dosyadır. 
+bir dosyanın uzantısını değiştirip file komutu ile baktığınızda dosya türünün değişmediğini
+görebilirsiniz. LINUX ta uzantı kavramı sadece kullanıcıların anlamasını kolaylaştırmak içindir
+işletim sistemi uzantıyı dikkate almaz
+Dosyanın ismi yazıldığında işletim sistemi tarafından
+yüklenir. Bir dizin için okuma hakkının olması o dizin için dizin listesinin alınabilmesi
+anlamındadır. Yazma hakkının anlamı o dizinde yeni bir dosya yaratma ya da olan bir dosyayı
+silme anlamındadır. Çünkü aslında dizinler de birer dosya gibidir. Dizinler için
+çalıştırılabilme hakkı tamamen farklı bir anlama gelir, bu hak bir path ifadesinde bir dizinin
+içerisinden başka bir dizine atlanabileceğini belirtir. Örneğin, bir dosya açacak olalım ve
+dosyanın path bilgisi şöyle olsun:
+/a/b/c.dat
+Burada biz c.dat dosyasının içeriğini yalnızca okumak isteyelim, yani fopen() fonksiyonu ile
+c.dat dosyasını "r+" modunda açmak isteyelim. Burada a dizininin içerisinden geçilmektedir.
+Yani a'nın çalıştırılabilir hakkına sahip olması gerekir. c.dat dosyasının okuma ve yazma
+haklarına sahip olması gerekir. b'nin okuma ve çalıştırılabilir hakkına sahip olması gerekir,
+ancak yazma hakkına sahip olmasına gerek yoktur. Dizinler için böyle bir mekanizma
+kurulmasının anlamı şudur: Bir kişi bir dizini korumak isteyebilir ama o dizinin altındaki
+başka bir dizini korumak istemeyebilir, bu durumda korumak istediği dizin için okuma ve
+yazma hakkı vermez onun alt dizini için okuma ve yazma hakkı verir, ancak üst dizin için
+geçiş hakkını vermesi gerekir.
+Aşağıdaki path ile verilen fonksiyonu "w+" modunda açmak isteyelim.
+/a/b/c/d.dat
+Bu durumda a, b, c dizinleri için x hakkının olması gerekir, ancak a ve b için r ve w haklarının
+olmasına gerek yoktur. d.dat dosyasının okuma ve yazma hakkına sahip olması gerekir.
+Burada c dizininin hangi haklara sahip olması gerekir? Bir dizin için yazma hakkı dizin
+içerisinde yeni bir giriş oluşturmak anlamındadır. Yani yukarıdaki örnekte d.dat dosyası daha
+önce varsa, yani biz truncate işlemi yapıyorsak, c dizininin yazma hakkına sahip olmasına
+gerek yoktur. Ancak d.dat dosyası yoksa dizin içerisinde yeni bir giriş oluşturulacaktır, bu
+durumda c'nin yazma hakkına sahip olması gerekir.
+
+ls -ld	  kullanıcının dizin hakkları
+
+ls -l /etc/shadow    	   dosya sahibi farklı
+ls -l /etc/passwd
+
+
+
+Disk Biçimlendirme
+----------------------
+4 tane primiary partition olabilir
+sda1
+sda2
+sda3
+	sda5
+	sda6
+
+sda4 extended partition olur ve logical olarak parçlanır
+
+sata disklerde toplamda max 63 partition
+scsi disklerde toplamda max 15 partiton
+
+
+fdisk           disk manupulation(bitirmeden çıkma!!)
+                p print
+                d delete
+		w write(dikkat! yanlış birşey yapamdığınız veya w parametresini vermediğiniz sürece disk tablosunu yazmaz taslak olarak kalır)
+
+p : partitionları listeler
+d : partitionları siler
+n : yeni partition oluşturur.
+a : partitionu bootable yapar.
+t : (82) Linux swap partitionu oluşturur.
+Gerçek kapasite (MB olarak)= ((Cylinder * Heads * Sector * 512 )/1024) / 1024
+Partitionlar (p primary partition en fazla dört partition oluşturulabilir. )
+(e extended partition : harf sayısı kadar partition oluşturulabilir.Raid extended partitiondır.)
+First cylinder : başlangıç yeri (1.partition +1G, 2. partition 256M)
+Last cylinder : bitiş yeri. Default hepsinialır.
+windows da görünebilmesi için label'ı değiştir -t parametresi ile
+w : değişiklikleri diske yazar.
+
+Not1:Bölüm tablosunu oluşturduktan sonra bunu işletim sistemine tanıtmamız gerekir
+	   ilk ve amele yol: sistemi yeniden başlatmak
+	   ikinci yol: partprobe komutunu çalıştırmak
+Not2:Partitionları ayırdıktan sonra diski kullanabilmek için dosya sistemlerini kurmamız gerekir.
+
+parted		görsel fdisk gibi bişey
+gparted		buda öle
+sfdisk --list
+
+
+Dosya Sistemleri
+------------------
+journalling file system:
+%5 journal her 5 saniyede bir yazılır. sistemde bir hata oluştuğunda (elktr. kesintisi, hatalı çıkarma)
+tutulan günlükler sayesinde zarar görmüş veri düzeltrilir
+
+ext2 jfs yok		recoviring uzun sürer fakat ext3 ve ext4'e göre biraz daha hızlı,max dosya boyutu ve toplam boyut daha küçük
+ext2  windows karşılığı FAT32
+
+ext3 jfs var  		linux için ilk adam akıllı jfs'lerden biri windows karşılığı NTFS, max dosya boyutu ve adresleme boyutu daha büyük
+ext4 jfs var            daha iyisi yapılana kadar en iyisi bu, windows karşılığı yok, her zaman bunu kullanın
+xfs                     büyük dosyalarda çok hızlı (%60 a varan fark ama siz bunu kullanmayın eskiden kalma bir gelenek)
+
+ext2 ext3 ext4 windowstaki FAT32 NTFS gibi fragmante(disk bölünmesi) olmaz bu yüzden disk birleştirme diye bir olay yoktur
+özellikle ext4 çok kararlıdır NTFS deki gibi bi dosyayı atarken 3 Yıl kaldı sonra 20 saniye kaldı sonra 5 hafta kaldı gibi 
+şeyler görmezsiniz ben daha hiç veri kaybı yaşamadım ve genelde performansı doluluk oranından çok etkilenmez(aşırı dolmadığı sürece)
+NTFS dosya sistemini 6 ay defrag(disk birleştirme) yapmazsanız yarı yarıya yavaşlayabilir(hatta yavaşlar) yada doluluk %70 lere yaklaşınca 
+performans diplere düşmez.
+ext4 geriye ve windows'a uyumlu çalışabilir.
+LINUX çekirdeği sık kullanılan ve bilinen hemen hemen bütün dosya sistemlerini tanır. Windows sadece kendisininkileri tanır. 
+LINUX ve Windows arasındaki bu disk parçalanmasının olayının nedeni:
+windows dosya sistemlerinde dosyanın ismi diskin ilk sektörlerine kendisi ise başka sektore yazılır. buraya kadarki kısım
+linux ile aynıdır fakat yeni bir dosya eklendiğinde windows dosyanın adını ilk sektorün devamına kendisini ise önceki dosyanın
+devamına yazar buradaki argüman diskin kafasının daha az hareket yapmasını engelleyerek performansı artırmak. Linux ta ise
+dosyanın kendisi kendinden önceki verinin arasında fiziksel olarak fark kalacak şekilde yazılır ve herhangi bir dosyanın değişme ihtimali
+veya dosya ekleme ihtimaline karşı bir alan bırakır. ardışık yazılan dosyalar zaman içinde değişebileceği için parçalanmaya uğrar
+yani dosyanın başı bir yerde ortası bir yerde sonu başka bir yerde bu zamanla performans düşüşü yaratır.
+aralarındaki fark aslında inanılmaz basit. bunu Microsoft hala niye yapmıyor hiç anlamış değilim.(Microsofta bok atma kısmı burada bitiyor)
+Not: ben belki anlatamam ama Linux'ta inode diye önemli bir kavram vardır lütfen inceleyin
+
+mkfs            make file system  ontanımlı 26 reboot/180 gün de bir fsck(disk kontrolu)
+
+mkfs.ext2 /dev/sdx1	 x diskinin 1. partitiona ext2 olarak dosya sistemi kurar
+mkfs.ext4 /dev/sdx3 	 x diskinin 3. partitiona ext4 olarak dosya sistemi kurar
+mkfs.vfat /dev/sdx2	 FAT 32(windows ile ortak flash diskler için daha uygun)
+mkfs.ntfs /dev/sdx1	 NTFS (windows ile ortak bölümler için uygun)
+	  mkfs.ntfs -f	 fast format (zero filling ile bad sector checki iptal eder) bunu yapmazsan çoook uzun sürer
+mkswap /dev/sdb2 	 2. partitionu swap olarak belirledik.
+
+fsck.ext4       dosya sistemi kontrolü yapar
+tune2fs         fsck bakım ayarları
+
+Master Boot Record
+-partition tipleri
+-partition n başladığı silindir
+-partitiondaki toplam silindir sayısı
+(filesystem quota)
+
+/dev/sda1   d = disk a = cihaz ismi 1 = bölüm numarası
+/dev/sdb3
+
+lsusb			usb ciahzları listeler
+lsblk			list of block
+lspci			list PCI
+lshw			list hardware
+
+mount aygıt dizin       aygıtı dizine bağlar
+bazen
+mount -t ext4 aygıt dizin	dosya sistemini belirtmek gerekebilir
+umount aygıt veya dizin		aygıtı çıkarır
+
+mount -o remount,rw,noatime     canlı sistemin ayarlarını değiştirir
+
+umount yaparken device is busy derse lsof list of open files ile açık dosyalar görülebilir
+
+/etc/fstab dosya sistemi sistem başlangıcında mount edilmesini istiyorsan ekle(windows veya diğer linux distro ile ortak kullandığı bölümler)
+fstab a ekledikten sonra
+mount -a               bütün aygıtları mount et (fstab da belirtilmiş olanları)
+Lütfen fstab ile ilgili parametrelere internetten bakın!
+
+/tmp yi noexec olarak bağla
+
+
+
+LVM             logical volume manager ve  logical partition birleştirme
+*******
+pvcreate /dev/sda1 /dev/sdb3     partition ı volume a dönüştürdü
+vgcreate volgr0 /dev/sda1  /dev/sda2
+lvcreate -L 500GB -n lvol0 /dev/volgr0
+
+pvdisplay
+vgdisplay
+lvdisplay
+
+lvextend
+
+1 extent=4MB
+
+fdisk veya parted ile partitionlar yaratılıp
+ID yi Linux LV seç
+partprobe ile taratılır ve
+sda1 ve sda3 birlştirilmek istenirse:
+*************************************************
+pvcreate /dev/sda1
+pvcreate /dev/sda3
+pvscan yada pvdisplay
+
+vgcreate volumegroup0 /dev/sda1 /dev/sda3
+vgdisplay
+
+lvcreate -l (extent) -n logicalvolume0 volumegroup0
+veya
+lvcreate -L (boyut) -n logicalvolume0 (/dev/)volumegroup0
+
+mkfs.ext4 /dev/volumegroup0/logicalvolume0
+          yarattığın dizine mount et
+lvextend -L (boyut) /dev/volumegroup0/logicalvolume0
+         df -h ta görünür
+resize2fs /dev/volumegroup0/logicalvolume0
+
+yaratılan dizini fstab a ekle
+
+hatalı işlem yaparasan vgremove ve pvremove yapmalısın
+
+
+RAID
+%60 geçerse yeni disk ekle
+
+RAID0           yan yana diskler stripes
+RAID1           miroring
+RAID10
+RAID5           parity web sunucusu için uygun db için değil
+
+software RAID
+hardware RAID   RAID kartı ile BBU
+
+
+inode:
+Linux dosya sistemindeki her nesneye ozgun bir indeks numarası verilir, bu indeks’e de inode denir.
+ls -i	dosyaların inode larını gösterir
+ls -id	dizinlerin
+ls -il	linkler ile gosterir
+stat ile dosya inodu görülebilir
+
+inode içinde
+File type (executable, block special etc)
+Permissions (read, write etc)
+Owner
+Group
+File Size
+File access, change and modification time (remember UNIX or Linux never stores file creation time, 
+this is favorite question asked in UNIX/Linux sys admin job interview)
+File deletion time
+Number of links (soft/hard)
+Extended attribute such as append only or no one can delete file including root user (immutability)
+Access Control List (ACLs)
+ama inode içinde isim yok!!
+
+
+ln  	 link
+hard link	
+ln ali veli
+inode seviyesinde adres gösterir
+     		dizin bağlamaz
+		başka dosya sisteminde çalışmaz
+		kaynak taşınsada aynı yeri gösterir
+sembolik link
+ln -s ali veli
+		dosya ismi ve dizin adresi seviyesinde çalışır
+     		kaynak taşınırsa çalışmaz
+		link taşınırsa çalışmaz
+		farklı dosya sistmeleri ve dizinler arasında çalışır
+her zaman (yani çoğu zaman) sembolik link kullanın
+
+Süreçler/process
+1	Arkaplan(background)
+2	Kabuk(foreground)
+
+ps çalışan processlerin listresi parametresiz halde bu komutu 
+çalıştıoran kullanıcının çalıştıdrdığı processler görünür
+
+PID	process ID
+TTY	processin çalıştığı terminalin adı
+TIME	cpu time şlemcinin bu komutu çalıştırmak için harcadığı zaman
+CMD	sürecin adı
+PPID	parent process id
+
+c+a+f1 f2 f3 f4 f5	tty(terminal)
+c+a+f7 yada f8 		grafik arayüz
+
+ps -ef		full format listing
+ps -af	
+ps -ax		terminale bağlı olmayan processleri gösterir
+ps -fauxww	çatallanmış processler görülür
+	köşeli parantez içindekiler karnel sürecidir
+ps -u user u
+	VSZ	sanal bellek kullanımı
+	RSS	bellekte kaplanan alan
+	START	sürecin başlaığı zaman
+	STAT	sürecin durumu
+		S:sleepin	giriş aygıtı bekleniyor
+		R:running	çalışan süreç
+
+Ctrl+z	süreci arka plana alır
+xeyes ctrl+z
+fg	foreground
+bg	background
+xeyes &
+
+jobs -l	arka plandakileri listeler
+		
+c+z	foreground da çalışan süreci duraklatır
+jobs	duraklatılmış süreçler görüntülenir	
+fg %2	duraklatılmış 2. süreç devam ettirilir
+
+top		top süreçleri gösterir
+top		h basın yardımı açın
+top -d 2	2 saniye arayla günceller
+	load avarage	bu cihazın yük durumu
+	load avarage:	anlık değer,5 dakikalık ortalama,15 dakikalık ortalama
+	cpu nun kaldırabileceği yük 1.00
+	quad cpu nun kaldırabileceği yük 4.00
+	PR: prority
+	-20 den +19
+	-20 en yüksek öncelik
+
+top 	1 e bas cpuları gör
+htop	gelişmiş top
+
+kill PID	adam akıllı kapan
+kill -TERM PID	TERM sinyali yollanır(terminate)
+kill -KILL PID	kapan ulan
+kill -9 PID	-KILL ile aynı
+kill -TERM %1	1. fg sürecini kapatır
+
+xkill	   grafik arayüzde farenin seçtiği yeri kapatır
+
+grep		çıktıyı al arananı bul
+ps -ef|grep
+ps -p PID	PID sürecinin adını gösterir
+
+nice -n -20 süreç	sürecin önceliğini -20 yapar
+renice -20 -p PID	PID numaralı sürecin önceliği -20 yap
+
+/etc/security/limit.conf	kullanıcın sistem kayn. kull. önceliği ayarlanır
+	kullanıcı_adı hard priority 1
+
+
+tar       direk skıştırmaz paketler
+    c   create
+    t   test
+    x   extract
+    r   append
+    A   tarfile
+    v   verbose
+    f   file
+    z	tar.gz
+    j	tar.bz2
+
+tar -xvf file.tar	    tar açar
+tar -cvf a.tar file	    tar oluşturulur file sıkıştırılır
+tar -zxvf file.tar.gz	    tar.gz açar
+tar -zcvf a.tar.gz file     tar.gz oluşturulur
+tar -jxvf a.tar.bz2 file    tar.bz2 açar
+tar -jcvf a.tar.bz2 file    tar.bz2 oluşturur
+
+gzip -1 veya -9         -9 çok sıkıştırır
+bzip2                   daha çok sıkıştırır daha yavaş büyük dosyalar için
+
+zip -r ali.zip veli         aliyi sıkıştır veli yap
+unzip ali.zip  		    aliyi açar
+
+gzip gunzip zcat
+zcat        sıkıştırılmış dosyanın içini göster
+
+
+kurulum esnasında
+onyükleyici işletim sistemini yükler ubuntu grub2 debian grub
+kullnır daha baska bootloader larda vardır örn LILO
+
+sudo update-grub        grubı günceller
+/etc/default/grub
+sudo apt-get install grub-pc
+upgrade-from-grub-legacy        grub to grub2
+
+USB den grub kurulumu
+sudo fdisk -l
+sudo mount /dev/sdax /mnt       linux u bagla
+sudo mount /dev/sdax /mnt/boot  veya boot u bagla
+sudo mount --bind /dev /mnt/dev/
+sudo mount --bind /proc /mnt/proc
+sudo mount --bind /sys /mnt/sys
+
+sudo chroot /mnt
+sudo grub-install /dev/sda              grub ı kurar
+sudo update-grub
+
+GRUB ontanımlı secim ayarı
+/etc/default/grub	icindeki default ile degistirilebilir
+grub-customizer		veya bu gui ile degisebilir
+
+
+Linux başlangıç sırası:
+BIOS
+Master Boot Record (MBR)
+Kernel
+init
+
+
+bash scripti
+#!/bin/bash             shebang ile başlar
+executable izni olmalıdır
+.sh  dosya ismi ile biter (genelde olmayadabilir)
+
+#!/bin/bash
+for FILENAME in `find /var/log -type f -iname "*.log"`
+do
+	mv "$i" "${FILENAME}"-----;
+done
+
+man bash	en büyük yardımıcımız
+    		bash bir süreçtir ama olmazsa olmazlardan
+
+
+GRUB            grand unified bootloader
+init
+/etc/initab     init in yapılandırma dosyası
+		id:5:initdefault
+/etc/init/rc-sysinit.conf  ubuntu icin
+		default
+
+INIT seviyesi ayarlanabilir
+init 0  kapatır
+init 6  reboot
+
+man init
+
+Normalde:
+0 - shutdown
+1 - single user mode (network,kullanıcı,parola yok. root a düşer)
+2 - multiuser ama network file system yok
+3 - multiuser text mode
+5 - multiuser graphical mode
+6 - reboot
+
+Ubuntu:
+0 - shutdown
+1 - single user mode
+2 - multiuser graphical mode
+6 - reboot
+
+/etc/rcX
+/etc/init
+/etc/init.d/		servislerimiz burda
+
+/etc/rc.local 		window maneger başlamdan önceki son çağrılan script
+			başlangıç scriptleri eklemek için ideal yer
+
+buraları incelemekte fayda var
+
+
+Zamanlanmış Görevler(cron)
+/etc/crontab
+
+komutlar
+crontab -l      list
+        -e      edit
+	-r      remove
+
+export EDITOR=nano      default editoru nano yapar
+
+minute (0-59), hour (0-23, 0 = midnight), day (1-31), month (1-12), weekday (0-6, 0 = Sunday), command
+
+
+min     h       day     month   week    user    command
+*       15      3,5
+0       15      6-10
+*/4
+*/15
+0,30
+
+
+hafta içi 9-18 saatleri arasında cron her yarım saatte bir
+# m     h       dom     mon     dow     command
+  0,30  9-17    *       *       1-5	/usr/bin/ls
+  0     18      *       *       1-5
+
+
+SERVİSLER
+sudo initctl list
+service --status-all
+	"+" started
+	"-" stopped
+	"?" unknown
+
+Directories and Configs
+/etc/init			servislerin ayarlarının (conf) bulunduğu yerdir. servislerin kendisi değildir ama servisin nerde olduğu yazılı
+/etc/init.d 		    	servislerin betikleri buradadır
+/etc/init/rc-sysinit.conf 	servislerin çalıştırılma ayarları buradadır
+				update-rc.d komutu ile ayarlanabilir  /etc/rc* çalışma seviyesi ile
+/etc/default 			servislerin öntanımlı olan ayarları burdan değiştirilir
+
+service komutu (Upstart yöntemi)
+
+Serivisin başlatılması:
+service myservice start
+
+Servisin durdurluması:
+service myservice stop
+
+Servislerin listesi:
+service --status-all
+
+
+Controlling Services - interchangeable with the "service" command
+initctl - can use in place of "service" with the commands bellow. Run initctl help.
+start - start a service
+      
+stop - stop a service
+reload - sends a SIGHUP signal to running process
+restart - restarts a service without reloading its job config file
+status - requests status of service
+       sudo service apache2 status
+
+Rebooting and Powering off the system
+halt - shutdown the system then power off
+poweroff - shutdown the system then power off
+reboot - reboot the system
+shutdown - bring the system down
+
+Misc Upstart Commands - you generally don't use these directly
+init - Upstart process management daemon 
+runlevel - Backward compatibility with traditional runlevels
+telinit - Backward compatibility with traditional runlevels
+upstart-udev-bridge - Bridge between upstart and udev
+
+screen diye bir method daha var sanal terminal açıyor
+screen aç
+screen (enter)
+sonra istediğin programı çalıştır
+"C-a d" yap
+kapat git
+çalıştırdığın uygulama devame decek screen içinde
+tekrar o ekranı görmek istediğinde
+"screen -rd" yaz enter'a bas
+
+Writing Services:
+
+The most current reference for job/service definition is available in the man page for init, available by running man 5 init. 
+There are also some very useful pointers in The Upstart Cookbook.
+Here is an example of a simple upstart job config: /etc/init/myservice.conf
+# myservice - myservice job file
+
+description "my service description"
+author "Me <myself@i.com>"
+
+# Stanzas
+#
+# Stanzas control when and how a process is started and stopped
+# See a list of stanzas here: http://upstart.ubuntu.com/wiki/Stanzas#respawn
+
+# When to start the service
+start on runlevel [2345]
+
+# When to stop the service
+stop on runlevel [016]
+
+# Automatically restart process if crashed
+respawn
+
+# Essentially lets upstart know the process will detach itself to the background
+expect fork
+
+# Run before process
+pre-start script
+    [ -d /var/run/myservice ] || mkdir -p /var/run/myservice
+    echo "Put bash code here"
+end script
+
+# Start the process
+exec myprocess
+
+
+Sistem Log ları
+logları görüntülemek için tail komutu
+tail -f		     sürekli görünüm
+/var/log/auth.log    	Authorization Log
+/var/log/daemon.log	Daemon Log
+/var/log/debug		Debug Log
+/var/log/kern		Kernel Log
+/var/log/syslog		System Log
+
+Logları anlayabilmek için şunları gözden geçirmek gerek:
+Local System Resources
+man dmesg    dmesg kernel ring buffer utility
+man faillog  faillog command (and also the faillog configuration file via man 5 faillog)
+man grep     grep pattern searching utility
+man head     head utility
+man klogd    kernel log daemon (klogd)
+man last     last command which shows last logged in users
+man less     less paging utility
+man logger   logger command-line interface to syslog utility
+man logrotate	    logrotate utility
+man savelog  	    savelog log file saving utility
+man syslogd  	    system log daemon (syslogd)
+man syslog.conf veya rsyslog.conf	    syslogd configuration file
+man tail	    tail utility
+
+
+cat /etc/rsyslog.conf
+ls /etc/rsyslog.d/
+/etc/rsyslog.d/*.conf
+
+*  anlamı aşağıdakiler
+7 - debug
+6 - info
+5 - notice
+4 - warning, warn
+3 - err, error
+2 - crit, 
+1 - alert, 
+0 - emerg, panic
+
+
+X Window System:
+MIT de geliştirilen X Pencere Sistemi (X), daha çok GNU/Linux ve Unix benzeri işletim sistemlerinde kullanılan grafik arayüz altyapısıdır. 
+Genel olarak ekrana çizdirme ve kullanıcıdan geribesleme alma işlerini yapan X sunucusunu ve uygulamaların 
+sunucu ile haberleşme için kullanabileceği X kütüphanesini kapsar. Bu sunucu-istemci yapısı sistemin ağ üzerinden çalışmasına da olanak verir.
+Sunucu doğrudan donanımı yönetebildiği gibi, başka bir alt yapı üzerinde de çalışabilir.
+Bu şekilde diğer işletim sistemlerinde de X sunucusu çalıştırılabilmektedir.
+Mevcut protokol sürümü X11 olduğundan, kimi zaman kısaca X11 olarak da anılır.
+X kütüphanesi göreceli olarak düşük seviyeli olduğundan, uygulama geliştiricilerin işini kolaylaştırabilecek birçok kontrol kütüphanesi geliştirilmiştir.
+X Server yerel(local) veya uzak(remote) olarak çalışabilir.
+Bu olay görsel arayüzün temelidir. bütün görsel ortamlar bunun üzerinde/beraberinde çalışır.
+startx tty den startx komutu verip anlaşılabilir
+
+X display manager:
+X Server(X Window System) üzerinde session(oturum) başlatmaya yarayan uygulama. Görsel login ekranı sağlar. 
+GDM, KDM, XDM, LXDM, SLIM, LightDM
+
+Desktop environment:
+X Window System kullanan, X display manager ile başlatılan uygulamalardır. Grafik uygulamalar burdan yönetilir.
+Buton, menü, çubuk, pencere yönetimi sağlar.
+GNOME, XDA, KDE, Xfce, Unity
+
+X window manager:
+X Window System üzerinde çalışan pencerelerin yönetimini sağlar.  X server ile clients arasında köprüdür. Pencerlerin şeklini,
+boyunu yerini ayarlar.
+Çeşitleri:
+Stacking window managers:	Blackbox, Fluxbox, Enlightenment
+Tiling window managers:	   	awesome, dwm, Ion, wmii, xmonad
+Compositing window managers:	Compiz, Metacity
+
+
+detaylı bilgi için:
+http://en.wikipedia.org/wiki/X_Window_System_protocols_and_architecture
+
+
+apropos		manual içinde arar
+ls *
+
+
+//c+x r r enter	dikdortgen seç	
+c+x r k		ile kes
+c+x r i 	ile kopyala
+c+x r y		ile yapıstır
+
+c+x r d		sil
+c+x r c		temizle
+c+x r o		bosluk ekle
+
+c+x r t "string" enter	yazi ile degistirir
+
+lshw  		 list hardware
+lspci 		 list PCI
+curl icanhazip.com	dış ip için
+
+
+
+
+SCREEN
+-d -r   Reattach a session and if necessary detach it first.
+-d -m   Start screen in "detached" mode. This creates a new session but doesn't attach to it. This is useful for system startup scripts.
+
+
+clive -f best <url>   	 netten video indirir
+
+traceroute    	ping benzeri
+dig
+iftop -n -p	ağ trafiği
+whois		domain names
+
+
+ssh -fgNL localport:host:hostport user@host
+-l tunel
+-f background
+-g karşı tarafın bağlanmasına da izin verir
+-N SSH sunucusunda herhangi bir komut çalıştırılmayacağını söyler.
+
+ssh -fgNL 5432:localhost:5432 ituieeelab
+
+You can correct command typos with the syntax:
+^typoCmd^correctCmd
+
+For example:
+nkdir -v -p /tmp/cgi-cache
+
+To correct it just type:
+^nkdir^mkdir
+
+watch	execute a program periodically, showing output fullscreen
+
+sudo watch hddtemp /dev/sd[a-z]
+
+converseen 	   photo resizer
+
+sudo dmidecode -t 16 //find max ram support
+
+
+ac   	       connect time hours
+last	       
+lastb	       last badattempt
+lastlog	       last time user login
+lastcomm       last executed command
+nmap -T5 192.168.1.0/24	       scan all your computers/network subnet for open ports 
+
+show public ip
+dig +short myip.opendns.com @resolver1.opendns.com
