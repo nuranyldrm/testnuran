@@ -1,0 +1,15 @@
+github dersi 
+
+git init -- ilk kez proje olustururken kullanıyruz 
+gid add .  diyerek  dosyaların hepsini
+git add <dosya ismi>
+git commit -m 'acıklama' snapchat ini alabiliyoruz 
+git status dosyaların durumunu gösterir
+git diff dosyaların uzerindeki degişiklikleri gösterir
+git checkout branchName bracler arası gecis 
+git push ile uzak sunucuya gönderiyoruz 
+git pull ile uzak sunucudan alıyıyoruz cekiyoruz
+git clone uzak sunucudan bir repoyu kopyalaya biliriz 
+
+https://git-scm.com/book/tr/v2
+linki ile gitin detaylı kitabından faydalanabilirsin 
