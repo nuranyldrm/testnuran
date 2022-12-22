@@ -23,6 +23,21 @@ listeleme olusturabiliriz basına koymamız yeterli
  ![acıklama bilgisi](url)
   ![Lorem piscum](http://piscum.photos/200/300)
 
+  ```python
+  print("hello world")
+  ```
+
+
+  ```javascript
+  console.log("hello world")
+
+  function helloWorld(){
+    console.log("helloworld")
+  }
+  ```
+
+  
+
 
 60saniyede markdown 
 https://commonmark.org/help/
