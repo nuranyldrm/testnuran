@@ -22,11 +22,11 @@ listeleme olusturabiliriz basına koymamız yeterli
  image/görsel resim ekleme basına unlem koyarak 
  ![acıklama bilgisi](url)
   ![Lorem piscum](http://piscum.photos/200/300)
-
+code blokları 
   ```python
   print("hello world")
   ```
-
+.
 
   ```javascript
   console.log("hello world")
@@ -36,7 +36,7 @@ listeleme olusturabiliriz basına koymamız yeterli
   }
   ```
 
-  
+
 
 
 60saniyede markdown 
